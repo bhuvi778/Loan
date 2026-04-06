@@ -40,9 +40,9 @@ export default function FAQ() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="faq" className="relative py-24 lg:py-32 bg-[#080808] overflow-hidden">
+    <section id="faq" className="relative py-8 lg:py-12 bg-black overflow-hidden">
       <div className="section-divider mb-0" />
-      <div className="orb w-[400px] h-[400px] bg-amber-500 top-1/2 right-[-100px] opacity-[0.05]" />
+      <div className="orb w-[400px] h-[400px] bg-[#1a9bdc] top-1/2 right-[-100px] opacity-[0.05]" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -53,7 +53,7 @@ export default function FAQ() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 text-[#1a9bdc] text-xs font-semibold tracking-widest uppercase mb-4">
             FAQs
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -82,7 +82,7 @@ export default function FAQ() {
               }}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                 open === i
-                  ? "border-amber-500/30 bg-amber-500/5"
+                  ? "border-[#1a9bdc]/30 bg-[#1a9bdc]/5"
                   : "border-white/[0.06] bg-[#111111] hover:border-white/10"
               }`}
             >
@@ -100,7 +100,7 @@ export default function FAQ() {
                 <div
                   className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
                     open === i
-                      ? "bg-amber-500/20 text-amber-400"
+                      ? "bg-[#1a9bdc]/20 text-[#1a9bdc]"
                       : "bg-white/[0.05] text-gray-500"
                   }`}
                 >
@@ -115,7 +115,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+                    <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-[#1a9bdc]/10 pt-4">
                       {faq.a}
                     </div>
                   </motion.div>

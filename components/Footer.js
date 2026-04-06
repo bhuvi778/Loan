@@ -1,7 +1,7 @@
 "use client";
 "use client";
 import { motion } from "framer-motion";
-import { TrendingUp, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   Services: [
@@ -65,17 +65,17 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#050505] overflow-hidden">
+    <footer className="relative bg-black overflow-hidden">
       <div className="section-divider" />
 
       {/* CTA Banner */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 via-amber-800/15 to-amber-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001a2e]/20 via-amber-800/15 to-amber-900/20" />
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(245,158,11,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.05) 1px, transparent 1px)",
+              "linear-gradient(rgba(26,155,220,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,155,220,0.05) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -113,13 +113,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
-                <TrendingUp size={20} className="text-black" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold text-lg text-white">
-                Fix Your <span className="text-gold-gradient">Finance</span>
-              </span>
+            <div className="mb-5">
+              <svg viewBox="0 0 210 64" height="42" width="220" style={{display:"block", marginLeft:"-30px"}} xmlns="http://www.w3.org/2000/svg" aria-label="Fix Your Finance">
+                <text x="0" y="48" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="52" fill="#ffffff" letterSpacing="-2">Fix</text>
+                <rect x="88" y="4" width="6" height="52" fill="#FF4900" rx="2" />
+                <text x="100" y="30" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="26" fill="#1a9bdc" letterSpacing="-0.5">Your</text>
+                <text x="100" y="56" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="26" fill="#1a9bdc" letterSpacing="-0.5">Finance</text>
+              </svg>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
               India&apos;s most trusted financial advisory organisation, helping individuals and businesses achieve lasting financial freedom since 2016.
@@ -132,7 +132,7 @@ export default function Footer() {
                 { icon: <MapPin size={14} />, text: "Mumbai, Maharashtra — 400001" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2.5 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-200">
-                  <span className="text-amber-500">{item.icon}</span>
+                  <span className="text-[#1a9bdc]">{item.icon}</span>
                   {item.text}
                 </div>
               ))}
@@ -144,7 +144,7 @@ export default function Footer() {
                   key={i}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-gray-500 hover:text-amber-400 hover:border-amber-500/30 transition-all duration-200"
+                  className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-gray-500 hover:text-[#1a9bdc] hover:border-[#1a9bdc]/30 transition-all duration-200"
                   aria-label={s.label}
                 >
                   {s.icon}
@@ -164,7 +164,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-gray-500 hover:text-amber-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-[#1a9bdc] transition-colors duration-200"
                     >
                       {link}
                     </a>

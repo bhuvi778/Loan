@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { TrendingUp, Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -38,30 +38,28 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/90 backdrop-blur-xl border-b border-amber-500/10 shadow-2xl shadow-black/50"
+            ? "bg-black/90 backdrop-blur-xl border-b border-[#1a9bdc]/10 shadow-2xl shadow-black/50"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[72px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+          <div className="flex items-center justify-between h-[90px]">
             {/* Logo */}
             <motion.a
               href="#"
-              className="flex items-center gap-2.5 group"
+              className="flex items-center group"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/30">
-                  <TrendingUp size={20} className="text-black" strokeWidth={2.5} />
-                </div>
-                <div className="absolute inset-0 rounded-xl bg-amber-400/20 blur-lg group-hover:bg-amber-400/40 transition-all duration-300" />
-              </div>
-              <div>
-                <span className="font-bold text-lg tracking-tight text-white">
-                  Fix Your{" "}
-                  <span className="text-gold-gradient">Finance</span>
-                </span>
-              </div>
+              <svg viewBox="0 0 210 64" height="90" width="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Fix Your Finance">
+                {/* "Fix" */}
+                <text x="0" y="48" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="52" fill="#ffffff" letterSpacing="-2">Fix</text>
+                {/* Orange vertical bar */}
+                <rect x="88" y="4" width="6" height="52" fill="#FF4900" rx="2" />
+                {/* "Your" */}
+                <text x="100" y="30" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="26" fill="#1a9bdc" letterSpacing="-0.5">Your</text>
+                {/* "Finance" */}
+                <text x="100" y="56" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="26" fill="#1a9bdc" letterSpacing="-0.5">Finance</text>
+              </svg>
             </motion.a>
 
             {/* Desktop Nav */}
@@ -72,13 +70,13 @@ export default function Navbar() {
                   onClick={() => handleNavClick(link.href)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
                     activeLink === link.href
-                      ? "text-amber-400"
+                      ? "text-[#1a9bdc]"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-amber-400 rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#4db8f0] rounded-full transition-all duration-300 ${
                       activeLink === link.href ? "w-4" : "w-0 group-hover:w-4"
                     }`}
                   />
@@ -93,7 +91,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick("#contact")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden sm:flex items-center gap-2 btn-gold px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-amber-500/20"
+                className="hidden sm:flex items-center gap-2 btn-gold px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-[#1a9bdc]/20"
               >
                 <PhoneCall size={15} />
                 Free Consultation
@@ -117,7 +115,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-amber-500/10"
+            className="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-[#1a9bdc]/10"
           >
             <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
               {navLinks.map((link, i) => (
@@ -127,7 +125,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left px-4 py-3 text-base text-gray-300 hover:text-amber-400 hover:bg-amber-400/5 rounded-xl transition-all duration-200 font-medium"
+                  className="text-left px-4 py-3 text-base text-gray-300 hover:text-[#1a9bdc] hover:bg-[#4db8f0]/5 rounded-xl transition-all duration-200 font-medium"
                 >
                   {link.label}
                 </motion.button>
@@ -138,7 +136,7 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.05 }}
                 href="#contact"
                 onClick={() => handleNavClick("#contact")}
-                className="mt-2 btn-gold px-5 py-3 rounded-xl text-sm font-semibold text-center shadow-lg shadow-amber-500/20"
+                className="mt-2 btn-gold px-5 py-3 rounded-xl text-sm font-semibold text-center shadow-lg shadow-[#1a9bdc]/20"
               >
                 Get Free Consultation
               </motion.a>

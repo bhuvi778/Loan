@@ -6,19 +6,19 @@ import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, MessageSquare } from "l
 
 const contactInfo = [
   {
-    icon: <Phone size={20} className="text-amber-400" />,
+    icon: <Phone size={20} className="text-[#1a9bdc]" />,
     label: "Call Us",
     value: "+91 98765 43210",
     sub: "Mon–Sat, 9AM–7PM IST",
   },
   {
-    icon: <Mail size={20} className="text-amber-400" />,
+    icon: <Mail size={20} className="text-[#1a9bdc]" />,
     label: "Email Us",
     value: "hello@fixyourfinance.in",
     sub: "Reply within 24 hours",
   },
   {
-    icon: <MapPin size={20} className="text-amber-400" />,
+    icon: <MapPin size={20} className="text-[#1a9bdc]" />,
     label: "Visit Us",
     value: "Mumbai | Delhi | Bengaluru | Hyderabad",
     sub: "15+ cities across India",
@@ -46,10 +46,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 lg:py-32 bg-[#080808] overflow-hidden">
+    <section id="contact" className="relative py-8 lg:py-12 bg-black overflow-hidden">
       <div className="section-divider mb-0" />
-      <div className="orb w-[500px] h-[500px] bg-amber-600 bottom-[-100px] left-[-100px] opacity-[0.07]" />
-      <div className="orb w-[300px] h-[300px] bg-amber-400 top-[-50px] right-[-50px] opacity-[0.05]" />
+      <div className="orb w-[500px] h-[500px] bg-[#1582b8] bottom-[-100px] left-[-100px] opacity-[0.07]" />
+      <div className="orb w-[300px] h-[300px] bg-[#4db8f0] top-[-50px] right-[-50px] opacity-[0.05]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -60,7 +60,7 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 text-[#1a9bdc] text-xs font-semibold tracking-widest uppercase mb-4">
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -87,9 +87,9 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-                className="flex items-start gap-4 p-5 rounded-2xl bg-[#111111] border border-white/[0.06] hover:border-amber-500/20 transition-all duration-300 group"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-[#0a0a0a] border border-white/[0.06] hover:border-[#1a9bdc]/20 transition-all duration-300 group"
               >
-                <div className="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/20 transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-[#1a9bdc]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#1a9bdc]/20 transition-all duration-300">
                   {info.icon}
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export default function Contact() {
               className="p-5 rounded-2xl glow-border glass"
             >
               <div className="flex items-center gap-2 mb-3">
-                <Clock size={16} className="text-amber-400" />
+                <Clock size={16} className="text-[#1a9bdc]" />
                 <span className="text-sm font-semibold text-white">Our Promise to You</span>
               </div>
               <ul className="space-y-2">
@@ -119,7 +119,7 @@ export default function Contact() {
                   "Data 100% confidential & secure",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-xs text-gray-400">
-                    <CheckCircle2 size={12} className="text-amber-400 flex-shrink-0" />
+                    <CheckCircle2 size={12} className="text-[#1a9bdc] flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -140,7 +140,7 @@ export default function Contact() {
                 className="p-8 rounded-3xl glow-border glass space-y-5"
               >
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                  <MessageSquare size={20} className="text-amber-400" />
+                  <MessageSquare size={20} className="text-[#1a9bdc]" />
                   Book Free Consultation
                 </h3>
 
@@ -156,7 +156,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Rahul Sharma"
-                      className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-amber-500/50 focus:bg-amber-500/5 transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#1a9bdc]/50 focus:bg-[#1a9bdc]/5 transition-all duration-300"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -171,7 +171,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
                       pattern="[0-9+\s\-]{7,15}"
-                      className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-amber-500/50 focus:bg-amber-500/5 transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#1a9bdc]/50 focus:bg-[#1a9bdc]/5 transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="rahul@example.com"
-                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-amber-500/50 focus:bg-amber-500/5 transition-all duration-300"
+                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#1a9bdc]/50 focus:bg-[#1a9bdc]/5 transition-all duration-300"
                   />
                 </div>
 
@@ -199,7 +199,7 @@ export default function Contact() {
                     name="goal"
                     value={formData.goal}
                     onChange={handleChange}
-                    className="w-full bg-[#111111] border border-white/[0.08] rounded-xl px-4 py-3 text-gray-300 text-sm focus:outline-none focus:border-amber-500/50 transition-all duration-300 cursor-pointer"
+                    className="w-full bg-[#0a0a0a] border border-white/[0.08] rounded-xl px-4 py-3 text-gray-300 text-sm focus:outline-none focus:border-[#1a9bdc]/50 transition-all duration-300 cursor-pointer"
                   >
                     <option value="">Select loan type</option>
                     <option value="personal">Personal Loan</option>
@@ -223,7 +223,7 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={3}
                     placeholder="Briefly describe your loan requirement — amount needed, purpose, monthly income..."
-                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-amber-500/50 focus:bg-amber-500/5 transition-all duration-300 resize-none"
+                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#1a9bdc]/50 focus:bg-[#1a9bdc]/5 transition-all duration-300 resize-none"
                   />
                 </div>
 
@@ -262,19 +262,19 @@ export default function Contact() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                  className="w-20 h-20 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-6"
+                  className="w-20 h-20 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/30 flex items-center justify-center mb-6"
                 >
-                  <CheckCircle2 size={40} className="text-amber-400" />
+                  <CheckCircle2 size={40} className="text-[#1a9bdc]" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-white mb-3">You&apos;re All Set!</h3>
                 <p className="text-gray-400 mb-2">
-                  Thank you, <strong className="text-amber-400">{formData.name}</strong>! We&apos;ve received your request.
+                  Thank you, <strong className="text-[#1a9bdc]">{formData.name}</strong>! We&apos;ve received your request.
                 </p>
                 <p className="text-gray-500 text-sm">
                   Our advisor will call you at <strong className="text-white">{formData.phone}</strong> within 4 business hours.
                 </p>
-                <div className="mt-6 px-5 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                  <p className="text-amber-400 text-sm font-semibold">
+                <div className="mt-6 px-5 py-3 rounded-xl bg-[#1a9bdc]/10 border border-[#1a9bdc]/20">
+                  <p className="text-[#1a9bdc] text-sm font-semibold">
                     📅 Check your email for confirmation & appointment details.
                   </p>
                 </div>

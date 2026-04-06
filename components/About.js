@@ -1,15 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { CheckCircle2, Target, TrendingUp, Award, Lightbulb } from "lucide-react";
+import { Clock, TrendingUp, Lightbulb, Banknote, PhoneCall, BadgeCheck } from "lucide-react";
 
 const pillars = [
-  { icon: <Award size={18} className="text-amber-400" />, text: "RBI Registered DSA" },
-  { icon: <Target size={18} className="text-amber-400" />, text: "Approval in 24–48 Hours" },
-  { icon: <TrendingUp size={18} className="text-amber-400" />, text: "Best Interest Rate Guarantee" },
-  { icon: <Lightbulb size={18} className="text-amber-400" />, text: "Minimal Documentation" },
-  { icon: <CheckCircle2 size={18} className="text-amber-400" />, text: "15+ Banking Partners" },
-  { icon: <CheckCircle2 size={18} className="text-amber-400" />, text: "End-to-End Loan Support" },
+  { icon: <BadgeCheck size={18} className="text-[#1a9bdc]" />, text: "Free Loan Advisory" },
+  { icon: <Clock size={18} className="text-[#1a9bdc]" />, text: "Approval in 24–48 Hours" },
+  { icon: <TrendingUp size={18} className="text-[#1a9bdc]" />, text: "Best Interest Rate Guarantee" },
+  { icon: <Lightbulb size={18} className="text-[#1a9bdc]" />, text: "Minimal Documentation" },
+  { icon: <Banknote size={18} className="text-[#1a9bdc]" />, text: "15+ Banking Partners" },
+  { icon: <PhoneCall size={18} className="text-[#1a9bdc]" />, text: "End-to-End Loan Support" },
+];
+
+const steps = [
+  { num: "01", title: "Share Your Need", desc: "Tell us loan type, amount & purpose in 2 minutes." },
+  { num: "02", title: "We Compare Offers", desc: "Our experts scan 15+ banks & NBFCs for your best rate." },
+  { num: "03", title: "Disbursal in 48 Hrs", desc: "Paperwork to disbursal — fully guided, zero stress." },
 ];
 
 const staggerContainer = {
@@ -26,10 +32,9 @@ export default function About() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="about" className="relative py-24 lg:py-32 bg-[#080808] overflow-hidden">
-      {/* Orb accents */}
-      <div className="orb w-[400px] h-[400px] bg-amber-600 top-[-80px] right-[-100px] opacity-10" />
-      <div className="orb w-[300px] h-[300px] bg-amber-400 bottom-0 left-[-80px] opacity-8" />
+    <section id="about" className="relative py-8 lg:py-12 bg-black overflow-hidden">
+      <div className="orb w-[400px] h-[400px] bg-[#1582b8] top-[-80px] right-[-100px] opacity-10" />
+      <div className="orb w-[300px] h-[300px] bg-[#4db8f0] bottom-0 left-[-80px] opacity-8" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -42,57 +47,78 @@ export default function About() {
           {/* Left: Visual */}
           <motion.div variants={fadeUp} className="relative order-2 lg:order-1">
             <div className="relative">
-              {/* Main image placeholder — stylised graphic */}
-              <div className="relative rounded-3xl overflow-hidden glow-border glass aspect-[4/3]">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-black to-amber-800/10" />
-                {/* Grid lines */}
+              <div className="relative rounded-3xl overflow-hidden glow-border glass p-8">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#001a2e]/20 via-black to-[#0d3a5c]/10" />
                 <div
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px)",
+                      "linear-gradient(rgba(26,155,220,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,155,220,0.05) 1px, transparent 1px)",
                     backgroundSize: "40px 40px",
                   }}
                 />
-                {/* Content inside */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-8">
-                  <div className="text-center">
-                    <p className="text-6xl font-black text-gold-gradient counter-glow mb-2">2016</p>
-                    <p className="text-gray-400 text-sm">Founded in India</p>
+                <div className="relative z-10 space-y-6">
+                  {/* Banking Partners */}
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">Our Banking Partners</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {["SBI", "HDFC", "ICICI", "Axis", "Kotak", "PNB", "BOB", "Yes Bank", "IDFC"].map((bank, i) => (
+                        <div key={i} className="rounded-lg bg-white/[0.04] border border-white/[0.07] px-2 py-2 flex items-center justify-center">
+                          <span className="text-gray-300 text-xs font-semibold">{bank}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-[11px] text-gray-600 mt-2 text-center">+ 6 more NBFCs &amp; lenders</p>
                   </div>
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
-                  <div className="grid grid-cols-2 gap-6 w-full">
+
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1a9bdc]/20 to-transparent" />
+
+                  {/* How it works */}
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">How It Works</p>
+                  <div className="space-y-4">
+                    {steps.map((s, i) => (
+                      <div key={i} className="flex items-start gap-4">
+                        <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 flex items-center justify-center text-[#1a9bdc] text-xs font-black">
+                          {s.num}
+                        </span>
+                        <div>
+                          <p className="text-white text-sm font-semibold">{s.title}</p>
+                          <p className="text-gray-500 text-xs leading-relaxed mt-0.5">{s.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1a9bdc]/20 to-transparent" />
+
+                  {/* Key stats */}
+                  <div className="grid grid-cols-2 gap-4">
                     {[
-                      { v: "10K+", l: "Loans Sanctioned" },
-                      { v: "₹500Cr", l: "Loans Disbursed" },
                       { v: "15+", l: "Banking Partners" },
-                      { v: "20+", l: "Cities Covered" },
+                      { v: "₹0", l: "Advisory Fee" },
+                      { v: "24–48 Hrs", l: "Typical Approval" },
+                      { v: "100%", l: "Transparent Process" },
                     ].map((s, i) => (
-                      <div key={i} className="text-center">
-                        <p className="text-2xl font-bold text-amber-400">{s.v}</p>
-                        <p className="text-xs text-gray-500 mt-0.5">{s.l}</p>
+                      <div key={i} className="rounded-xl bg-white/[0.03] border border-white/[0.06] px-3 py-3 text-center">
+                        <p className="text-lg font-bold text-[#1a9bdc]">{s.v}</p>
+                        <p className="text-[11px] text-gray-500 mt-0.5">{s.l}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Floating badge */}
+              {/* Promise badge */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -right-6 glow-border glass rounded-2xl px-5 py-4"
+                className="mt-4 glow-border glass rounded-2xl px-5 py-4 flex items-center justify-between"
               >
-                <p className="text-xs text-gray-500 mb-0.5">Overall Rating</p>
-                <div className="flex items-center gap-1">
-                  {"★★★★★".split("").map((s, i) => (
-                    <span key={i} className={i < 4 ? "text-amber-400 text-lg" : "text-amber-400/40 text-lg"}>
-                      ★
-                    </span>
-                  ))}
-                  <span className="text-white font-bold text-lg ml-1">4.67</span>
+                <p className="text-xs text-gray-500">Our Promise</p>
+                <div className="text-right">
+                  <p className="text-white font-bold text-sm">Zero Hidden Charges</p>
+                  <p className="text-[#EC8E00] text-xs mt-0.5 font-medium">100% Free for Borrowers</p>
                 </div>
-                <p className="text-xs text-gray-500 mt-0.5">from 3,200+ reviews</p>
               </motion.div>
             </div>
           </motion.div>
@@ -100,7 +126,7 @@ export default function About() {
           {/* Right: Text */}
           <div className="order-1 lg:order-2 space-y-6">
             <motion.div variants={fadeUp}>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 text-[#1a9bdc] text-xs font-semibold tracking-widest uppercase">
                 Who We Are
               </span>
             </motion.div>
@@ -109,20 +135,21 @@ export default function About() {
               variants={fadeUp}
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white"
             >
-              India&apos;s Trusted{" "}
-              <span className="text-gold-gradient">Loan Advisor.</span>
+              Smart Loan Advisory,{" "}
+              <span className="text-gold-gradient">Built for India.</span>
             </motion.h2>
 
             <motion.p variants={fadeUp} className="text-gray-400 text-lg leading-relaxed">
-              <strong className="text-white">Fix Your Finance</strong> is India&apos;s most trusted loan advisory
-              and DSA platform — founded in 2016 to help every Indian access credit at the best possible
-              interest rates with zero stress and full transparency.
+              <strong className="text-white">Fix Your Finance</strong> is a new-age loan advisory
+              platform built to help every Indian access credit at the best possible interest
+              rates — with zero stress, zero hidden charges, and full transparency.
             </motion.p>
 
             <motion.p variants={fadeUp} className="text-gray-400 leading-relaxed">
               Whether you need a personal loan, home loan, business funding, loan against property,
               credit card or overdraft — our expert loan managers compare offers from 15+ banks and
-              NBFCs to guarantee the lowest rate, fastest approval and hassle-free processing.
+              NBFCs to get you the lowest rate, fastest approval, and hassle-free processing.
+              Completely free for you.
             </motion.p>
 
             {/* Pillars grid */}
@@ -134,7 +161,7 @@ export default function About() {
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-amber-500/20 transition-all duration-300"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#1a9bdc]/20 transition-all duration-300"
                 >
                   <div className="flex-shrink-0">{p.icon}</div>
                   <span className="text-sm text-gray-300 font-medium">{p.text}</span>

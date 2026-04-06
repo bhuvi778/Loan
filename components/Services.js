@@ -45,7 +45,7 @@ const services = [
     title: "Credit Card",
     desc: "Get the best credit card matched to your lifestyle — zero annual fee, cashback, travel rewards, fuel surcharge waiver and a 45-day interest-free credit period.",
     tags: ["Zero Annual Fee", "Cashback", "Travel Perks", "45-Day Credit"],
-    gradient: "from-amber-400/20 to-amber-600/5",
+    gradient: "from-[#1a9bdc]/20 to-[#1582b8]/5",
   },
   {
     icon: <RefreshCw size={28} />,
@@ -70,12 +70,12 @@ export default function Services() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
-    <section id="services" className="relative py-24 lg:py-32 bg-[#0a0a0a] overflow-hidden">
+    <section id="services" className="relative py-8 lg:py-12 bg-black overflow-hidden">
       {/* Section divider top */}
       <div className="section-divider mb-0" />
 
       {/* Background accent */}
-      <div className="orb w-[500px] h-[500px] bg-amber-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04]" />
+      <div className="orb w-[500px] h-[500px] bg-[#1a9bdc] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -86,7 +86,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 text-[#1a9bdc] text-xs font-semibold tracking-widest uppercase mb-4">
             Our Services
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -122,7 +122,7 @@ export default function Services() {
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-5 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-300 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-2xl bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 flex items-center justify-center text-[#1a9bdc] mb-5 group-hover:bg-[#1a9bdc]/20 group-hover:border-[#1a9bdc]/40 transition-all duration-300 group-hover:scale-110">
                   {service.icon}
                 </div>
 
@@ -133,7 +133,7 @@ export default function Services() {
                   </h3>
                   <ArrowUpRight
                     size={18}
-                    className="text-gray-600 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                    className="text-gray-600 group-hover:text-[#1a9bdc] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ export default function Services() {
                   {service.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="px-2.5 py-1 rounded-lg bg-amber-500/8 border border-amber-500/15 text-amber-400/80 text-xs font-medium"
+                      className="px-2.5 py-1 rounded-lg bg-[#1a9bdc]/8 border border-[#1a9bdc]/15 text-[#1a9bdc]/80 text-xs font-medium"
                     >
                       {tag}
                     </span>
@@ -171,7 +171,7 @@ export default function Services() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 btn-gold px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-amber-500/20"
+            className="inline-flex items-center gap-2 btn-gold px-8 py-3.5 rounded-xl font-bold text-sm shadow-xl shadow-[#1a9bdc]/20"
           >
             Get a Free Analysis
             <ArrowUpRight size={16} />

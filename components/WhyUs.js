@@ -48,8 +48,8 @@ export default function WhyUs() {
   const [refProcess, inViewProcess] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="why-us" className="relative py-24 lg:py-32 bg-[#080808] overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-amber-500 bottom-0 right-0 opacity-[0.06]" />
+    <section id="why-us" className="relative py-8 lg:py-12 bg-black overflow-hidden">
+      <div className="orb w-[400px] h-[400px] bg-[#1a9bdc] bottom-0 right-0 opacity-[0.06]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -60,7 +60,7 @@ export default function WhyUs() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1a9bdc]/10 border border-[#1a9bdc]/20 text-[#1a9bdc] text-xs font-semibold tracking-widest uppercase mb-4">
             Why Choose Us
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
@@ -86,10 +86,10 @@ export default function WhyUs() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
-              className="group p-6 rounded-2xl bg-[#111111] border border-white/[0.06] hover:border-amber-500/25 card-hover transition-all duration-300"
+              className="group p-6 rounded-2xl bg-[#111111] border border-white/[0.06] hover:border-[#1a9bdc]/25 card-hover transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 flex-shrink-0 group-hover:bg-amber-500/20 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#1a9bdc]/10 flex items-center justify-center text-[#1a9bdc] flex-shrink-0 group-hover:bg-[#1a9bdc]/20 transition-all duration-300">
                   {adv.icon}
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export default function WhyUs() {
             className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative"
           >
             {/* Connector line */}
-            <div className="hidden lg:block absolute top-9 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent z-0" />
+            <div className="hidden lg:block absolute top-9 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#1a9bdc]/30 to-transparent z-0" />
 
             {process.map((step, i) => (
               <motion.div
@@ -137,7 +137,7 @@ export default function WhyUs() {
                 }}
                 className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-5 shadow-xl shadow-amber-500/25">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1a9bdc] to-[#1582b8] flex items-center justify-center mb-5 shadow-xl shadow-amber-500/25">
                   <span className="text-black font-black text-lg">{step.step}</span>
                 </div>
                 <h4 className="font-bold text-white text-lg mb-2">{step.title}</h4>
